@@ -14,14 +14,14 @@ var (
 
 func main() {
 	service := web.NewService(
-		web.Name("go.micro.haha.web.portal_web"), 
+		web.Name("go.micro.web.portal_web"), 
 		web.Address(":8088"),
 		web.StaticDir("html"),
 
 	)
 	
 	service.Init()
-	srvClient = sum.NewSumService("go.micro.haha.srv.sum_service", service.Options().Service.Client() )
+	srvClient = sum.NewSumService("go.micro.srv.sum_service", service.Options().Service.Client() )
 	service.HandleFunc("/portal_web/sum", Sum)
 	service.Run()
 }

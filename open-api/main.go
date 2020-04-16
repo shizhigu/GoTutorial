@@ -46,7 +46,7 @@ func (open Open) Fetch(ctx context.Context, req *api.Request, rsp *api.Response)
 
 func main() {
 	service := micro.NewService(
-		micro.Name("go.micro.haha.api.open"),
+		micro.Name("go.micro.api.open"),
 	)
 
 	srvClient = sum.NewSumService("github.com/shizhigu/GoTutorial/sum", service.Client())

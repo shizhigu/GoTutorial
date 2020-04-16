@@ -8,7 +8,7 @@ import (
 
 func main() {
 	srv := micro.NewService(
-		micro.Name("go.micro.haha.srv.sum_service"),
+		micro.Name("go.micro.srv.sum_service"),
 	)
 
 	srv.Init()
