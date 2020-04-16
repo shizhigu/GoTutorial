@@ -23,10 +23,7 @@ type Open struct {
 }
 
 func (open *Open) Fetch(ctx context.Context, req *api.Request, rsp *api.Response) error {
-	fmt.Println(req)
-	fmt.Println("hello")
 	sumInputStr := req.Get["sum"].Values[0]
-	fmt.Println(sumInputStr)
 	
 	sumInput, _ := strconv.ParseInt(sumInputStr, 10, 10)
 	// sumInput = int32(sumInput)
@@ -43,7 +40,6 @@ func (open *Open) Fetch(ctx context.Context, req *api.Request, rsp *api.Response
 	}
 	
 	fmt.Println(sumRsp.Output)
-	fmt.Println("world")
 	ret, _ := json.Marshal(map[string]interface{} {
 		"sum":	sumRsp.Output,
 	})
